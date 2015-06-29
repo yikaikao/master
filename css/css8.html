@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>cssˋ4 particle</title>
+	<title>css</title>
 </head>
-	<!-- // <script src="/jquery-2.1.4.min.js" ></script> -->
-	<!-- <script type="text/javascript" src="http://www.google.com/jsapi"></script> -->
-<script type="text/javascript" language="javascript">
-google.load("jquery", "1.3");
-</script>
-	<script type="text/javascript">
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css"></link>
+	<style type="text/css" media="screen">
+		body {background-color:#000000; color:#555555;} 
+h4 {font-family: sans-serif; color:#555555; font-size:16px;}
+h3 {font-family: sans-serif; color:#555555;}
+p {font-family: sans-serif; color:#888888; font-size:14px;}
+a {font-family: sans-serif; color:#d15423; text-decoration:none;}
+
+.slider{
+  width:500px;
+  background: #000;
+}
+	</style>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+	<script type="text/javascript" language="javascript">
 
 window.addEventListener("load", windowLoadHandler, false);
 var sphereRad = 280;
 var radius_sp=1;
+var opt_display_dots = false;
+
+var unicodeFlakes = ['❄', '❅', '❆', '❄', '❅', '❆', '❄', '❅', '❆', '❄', '❅', '❆', '❄', '❅', '❆', '我', '載', '火', '的', '山', '首', '页', '鍺', '是', '種', '化', '學', '化', '學', '符', '號', '是', '原', '子', '序', '數', '是', '它', '是', '種', '灰', '白', '色', '類', '金', '屬', '有', '光', '澤', '質', '硬', '屬', '於', '碳', '族', '化', '學', '性', '質', '與', '同', '族', '的', '錫', '與', '矽', '相', '共', '有', '五', '種', '同', '位', '素', '❄', '❅', '❆', '❄', '❅', '❆', '❄', '❅', '❆', '❄', '❅', '❆', '❅', '❆', '才', '菜', '参', '餐', '层', '茶', '差', '长', '常', '场', '唱', '超', '车', '成', '城', '程', '吃', '店', '定', '订', '丢', '东', '冬', '懂', '动', '都', '读', '独', '度', '短', '对', '多', '饿', '儿', '而', '发', '法', '反', '饭', '方', '房', '放', '飞', '非', '费', '分', '份', '风', '封', '夫', '服', '附', '父', '复', '该', '改', '干', '感', '刚', '高', '告', '哥', '歌', '格', '个', '给', '号', '喝', '和', '河', '贺', '黑', '很', '红', '后', '候', '湖', '护', '花', '化', '画', '话', '坏', '欢', '还', '换', '黄', '回', '会', '婚', '活', '火', '或', '机', '鸡', '级', '极', '急', '际', '济', '继', '寄', '加', '家', '假', '价', '力', '历', '丽', '联', '凉', '两', '亮', '谅', '辆', '了', '林', '零', '六', '楼', '路', '录', '旅', '妈', '马', '码', '吗', '买', '卖', '满', '慢', '忙', '猫', '毛', '贸', '么', '没', '每', '美', '妹', '米', '面', '民', '明', '末', '母', '目', '拿', '哪', '那', '奶', '男', '南', '难', '脑', '呢', '能', '你', '年', '念', '鸟', '您', '牛', '农', '努', '女', '暖', '欧', '怕', '乓', '旁', '胖', '跑', '朋', '片', '漂', '票', '乒', '平', '期', '其', '奇', '骑', '起', '气', '汽', '千', '前', '签', '轻', '清', '情', '请', '秋', '球', '区', '取', '去', '趣', '全', '然', '让', '首', '售', '书', '术', '树', '双', '谁', '水', '睡', '说', '司', '思', '死', '四', '送', '诉', '算', '虽', '岁', '孙', '所', '他', '她', '它', '台', '太', '谈', '汤', '堂', '套', '特', '踢', '提', '题', '体', '天', '填', '条', '铁', '听', '厅', '庭', '通', '同', '头', '图', '外', '玩', '完', '晚', '万', '王', '网', '往', '忘', '望', '卫', '为', '位', '文', '我', '卧', '五', '午', '务', '物', '西', '吸', '希', '息', '习', '牙', '亚', '烟', '言', '羊', '阳', '样', '药', '要', '也', '业', '夜', '一', '衣', '医', '已', '以', '易', '意', '因', '音', '印', '银', '应', '英', '影', '硬', '用', '邮', '油', '游', '友', '有', '又', '右', '鱼', '愉', '雨', '语', '元', '员', '园', '原', '远', '院', '愿', '月', '在', '早', '怎', '张', '找', '照', '者', '这', '真', '正', '证', '知', '只', '之', '直', '止', '纸', '至', '治', '中', '钟', '种', '重', '周', '洲', '主', '住', '助', '祝', '注', '专', '准' ];
+
 //for debug messages
 var Debugger = function() { };
 Debugger.log = function(message) {
@@ -77,10 +95,11 @@ function canvasApp() {
 		
 	init();
 	
+  // INITIALLI
 	function init() {
 		wait = 1;
 		count = wait - 1;
-		numToAddEachFrame = 8;
+		numToAddEachFrame = 4;
 		
 		//particle color
 		r = 70;
@@ -176,7 +195,7 @@ function canvasApp() {
 		while (p != null) {
 			//before list is altered record next particle
 			nextParticle = p.next;
-			
+
 			//update age
 			p.age++;
 			
@@ -202,7 +221,7 @@ function canvasApp() {
 			m =radius_sp* fLen/(fLen - rotZ);
 			p.projX = rotX*m + projCenterX;
 			p.projY = p.y*m + projCenterY;
-				
+			
 			//update alpha according to envelope parameters.
 			if (p.age < p.attack+p.hold+p.decay) {
 				if (p.age < p.attack) {
@@ -236,10 +255,19 @@ function canvasApp() {
 				depthAlphaFactor = (1-rotZ/zeroAlphaDepth);
 				depthAlphaFactor = (depthAlphaFactor > 1) ? 1 : ((depthAlphaFactor<0) ? 0 : depthAlphaFactor);
 				context.fillStyle = rgbString + depthAlphaFactor*p.alpha + ")";
-				
+        /*ADD TEXT function!*/
+        /*ADD TEXT function!*/
+        /*ADD TEXT function!*/
+        /*ADD TEXT function!*/
+				context.fillText(p.flake,p.projX, p.projY);
+        /*ADD TEXT function!*/
+        /*ADD TEXT function!*/
+        /*ADD TEXT function!*/
+        /*ADD TEXT function!*/
 				//draw
 				context.beginPath();
-				context.arc(p.projX, p.projY, m*particleRad, 0, 2*Math.PI, false);
+        if(opt_display_dots)
+          {context.arc(p.projX, p.projY, m*particleRad, 0, 2*Math.PI, false);}
 				context.closePath();
 				context.fill();
 			}
@@ -251,6 +279,7 @@ function canvasApp() {
 	function addParticle(x0,y0,z0,vx0,vy0,vz0) {
 		var newParticle;
 		var color;
+    
 		
 		//check recycle bin for available drop:
 		if (recycleBin.first != null) {
@@ -291,6 +320,8 @@ function canvasApp() {
 		newParticle.velZ = vz0;
 		newParticle.age = 0;
 		newParticle.dead = false;
+    
+    newParticle.flake = unicodeFlakes[Math.floor(Math.random() * unicodeFlakes.length)];
 		if (Math.random() < 0.5) {
 			newParticle.right = true;
 		}
@@ -364,6 +395,12 @@ $(function() {
 
 
 
+
+
+
+
+
+
  
 
 
@@ -371,39 +408,33 @@ $(function() {
 
 
 
-	</script>
-	<style type="text/css">
-		body {background-color:#000000; color:#555555;} 
-h4 {font-family: sans-serif; color:#555555; font-size:16px;}
-h3 {font-family: sans-serif; color:#555555;}
-p {font-family: sans-serif; color:#888888; font-size:14px;}
-a {font-family: sans-serif; color:#d15423; text-decoration:none;}
-
-.slider{
-  width:500px;
-  background: rgba(0,90,50,0.7);
-}
-
-
-/*
-
-
-HTML5 Canvas - Projecting 3D particles to a 2D canvas.
-from rectangleworld.com
 
 
 
--- I did not code this, just added the jquery slider -- 
+ 
 
--*/
-	</style>
-	<body onload="init()">		
-		<div style="text-align:center">
-		<div class="slider" id="slider-range"></div>
-		<div class="slider" id="slider-test"></div>
-  
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+</script>
+	<body>		
+		
+<div style="text-align:center">
+<div class="slider" id="slider-range"></div>
+<div class="slider" id="slider-test"></div>  
   <canvas id="canvasOne" width="900" height="520" ></canvas>
-  
+  <p>HTML5 Canvas - Projecting 3D particles to a 2D canvas. &nbsp; &nbsp;<a href="http://www.rectangleworld.com">rectangleworld.com</a></p>
 </div>
 
 

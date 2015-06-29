@@ -3,8 +3,89 @@
 <head>
 	<title>css</title>
 </head>
+	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+		function fillMe() {
+		  i = 0;
+		  while (i < 30) {
+		    count = i%2;
+		    if (count == 1) {
+		      numCount = 'one';
+		    } else if (count == 0) {
+		      numCount = 'two';
+		    } else {
+		      numCount = 'three';
+		    }
+		    $('.top').removeClass('top').append('<div class="circle '+numCount+' top"></div>');
+		    i++;
+		  }
+		};
+		$(document).ready(function() {
+		  fillMe();
+		});
+	</script>
+	<style type="text/css">
+		@import "compass/css3";
+		html {
+		  height: 100%;
+		  @include background-image(radial-gradient(center center, #333 0%, #222 100%));
+		  overflow: hidden;
+		  font-family: Gotham, Proxima Nova, Helvetica, sans-serif;
+		}
+		.main {
+		  position: relative;
+		  margin: 10em auto 0;
+		  width: 20em;
+		  perspective-origin: 50% 50%;
+		  transform-style: preserve-3d;
+		  transform-origin: bottom center -10em;
+		  animation: spin 3s infinite linear;
+		}
+		.circle {
+		  position: absolute;  
+		  top: -1px; left: -1px; bottom: -1px; right: -1px;
+		  width: 20em;
+		  height: 20em;
+		  border-radius: 10em;
+		  padding: 0;
+		  border: 1px solid #fff;
+		  background: transparent;
+		  box-sizing: border-box;
+		  transition: transform .2s linear;
+		  transform: rotateY(6deg) rotateX(6deg) rotateZ(6deg);
+		  transform-style: preserve-3d;
+		  /*animation: grow .3s infinite linear;*/
+		}
+		.one {
+		  border-color: white;
+		}
+		.two {
+		  border-color: orange; 
+		}
+		@keyframes spin {
+			0% { 
+		    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); 
+		  }
+		  100% { 
+		    transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg); 
+		  }
+		}
+		@keyframes grow {
+			0% { 
+		    transform: scale(1); 
+		  }
+		  50% {
+		    transform: scale(1.2);
+		  }
+		  100% { 
+		    transform:  scale(1); 
+		  }
+		}
+	</style>
 	<body>		
 		css
-
+		<div class="main">
+			<div class="top">
+			</div>
+		</div>
 	</body>
-</html>l>
+</html>
