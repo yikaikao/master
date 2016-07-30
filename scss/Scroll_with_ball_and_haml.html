@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>css</title>
+</head>
+<style type="text/css" media="screen">
+.center {
+    margin-top: 150px;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+}
+
+.sphere {
+    margin: auto;
+    position: relative;
+    height: 400px;
+    width: 400px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-animation: rotate 2s infinite linear;
+    animation: rotate 2s infinite linear;
+}
+
+.circle {
+    position: absolute;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    padding: 20px;
+    border-radius: 100%;
+    border: 1px solid #FFF;
+}
+
+.circle:nth-child(1) {
+    -webkit-transform: rotateY(0deg) rotateX(0deg);
+    transform: rotateY(0deg) rotateX(0deg);
+    background: rgba(255, 0, 0, 0.25);
+}
+
+.circle:nth-child(2) {
+    -webkit-transform: rotateY(4.28571deg) rotateX(8.57143deg);
+    transform: rotateY(4.28571deg) rotateX(8.57143deg);
+    background: rgba(255, 6, 0, 0.25);
+}
+
+.circle:nth-child(3) {
+    -webkit-transform: rotateY(8.57143deg) rotateX(17.14286deg);
+    transform: rotateY(8.57143deg) rotateX(17.14286deg);
+    background: rgba(255, 13, 0, 0.25);
+}
+
+.circle:nth-child(4) {
+    -webkit-transform: rotateY(12.85714deg) rotateX(25.71429deg);
+    transform: rotateY(12.85714deg) rotateX(25.71429deg);
+    background: rgba(255, 19, 0, 0.25);
+}
+
+.circle:nth-child(5) {
+    -webkit-transform: rotateY(17.14286deg) rotateX(34.28571deg);
+    transform: rotateY(17.14286deg) rotateX(34.28571deg);
+    background: rgba(255, 26, 0, 0.25);
+}
+
+.circle:nth-child(6) {
+    -webkit-transform: rotateY(21.42857deg) rotateX(42.85714deg);
+    transform: rotateY(21.42857deg) rotateX(42.85714deg);
+    background: rgba(255, 32, 0, 0.25);
+}
+
+.circle:nth-child(7) {
+    -webkit-transform: rotateY(25.71429deg) rotateX(51.42857deg);
+    transform: rotateY(25.71429deg) rotateX(51.42857deg);
+    background: rgba(255, 38, 0, 0.25);
+}
+
+.circle:nth-child(8) {
+    -webkit-transform: rotateY(30deg) rotateX(60deg);
+    transform: rotateY(30deg) rotateX(60deg);
+    background: rgba(255, 45, 0, 0.25);
+}
+
+.circle:nth-child(9) {
+    -webkit-transform: rotateY(34.28571deg) rotateX(68.57143deg);
+    transform: rotateY(34.28571deg) rotateX(68.57143deg);
+    background: rgba(255, 51, 0, 0.25);
+}
+
+.circle:nth-child(10) {
+    -webkit-transform: rotateY(38.57143deg) rotateX(77.14286deg);
+    transform: rotateY(38.57143deg) rotateX(77.14286deg);
+    background: rgba(255, 57, 0, 0.25);
+}
+
+.circle:nth-child(11) {
+    -webkit-transform: rotateY(42.85714deg) rotateX(85.71429deg);
+    transform: rotateY(42.85714deg) rotateX(85.71429deg);
+    background: rgba(255, 64, 0, 0.25);
+}
+
+.circle:nth-child(12) {
+    -webkit-transform: rotateY(47.14286deg) rotateX(94.28571deg);
+    transform: rotateY(47.14286deg) rotateX(94.28571deg);
+    background: rgba(255, 70, 0, 0.25);
+}
+
+.circle:nth-child(13) {
+    -webkit-transform: rotateY(51.42857deg) rotateX(102.85714deg);
+    transform: rotateY(51.42857deg) rotateX(102.85714deg);
+    background: rgba(255, 77, 0, 0.25);
+}
+
+.circle:nth-child(14) {
+    -webkit-transform: rotateY(55.71429deg) rotateX(111.42857deg);
+    transform: rotateY(55.71429deg) rotateX(111.42857deg);
+    background: rgba(255, 83, 0, 0.25);
+}
+
+.circle:nth-child(15) {
+    -webkit-transform: rotateY(60deg) rotateX(120deg);
+    transform: rotateY(60deg) rotateX(120deg);
+    background: rgba(255, 89, 0, 0.25);
+}
+
+.circle:nth-child(16) {
+    -webkit-transform: rotateY(64.28571deg) rotateX(128.57143deg);
+    transform: rotateY(64.28571deg) rotateX(128.57143deg);
+    background: rgba(255, 96, 0, 0.25);
+}
+
+.circle:nth-child(17) {
+    -webkit-transform: rotateY(68.57143deg) rotateX(137.14286deg);
+    transform: rotateY(68.57143deg) rotateX(137.14286deg);
+    background: rgba(255, 102, 0, 0.25);
+}
+
+.circle:nth-child(18) {
+    -webkit-transform: rotateY(72.85714deg) rotateX(145.71429deg);
+    transform: rotateY(72.85714deg) rotateX(145.71429deg);
+    background: rgba(255, 108, 0, 0.25);
+}
+
+.circle:nth-child(19) {
+    -webkit-transform: rotateY(77.14286deg) rotateX(154.28571deg);
+    transform: rotateY(77.14286deg) rotateX(154.28571deg);
+    background: rgba(255, 115, 0, 0.25);
+}
+
+.circle:nth-child(20) {
+    -webkit-transform: rotateY(81.42857deg) rotateX(162.85714deg);
+    transform: rotateY(81.42857deg) rotateX(162.85714deg);
+    background: rgba(255, 121, 0, 0.25);
+}
+
+.circle:nth-child(21) {
+    -webkit-transform: rotateY(85.71429deg) rotateX(171.42857deg);
+    transform: rotateY(85.71429deg) rotateX(171.42857deg);
+    background: rgba(255, 128, 0, 0.25);
+}
+
+.circle:nth-child(22) {
+    -webkit-transform: rotateY(90deg) rotateX(180deg);
+    transform: rotateY(90deg) rotateX(180deg);
+    background: rgba(255, 134, 0, 0.25);
+}
+
+.circle:nth-child(23) {
+    -webkit-transform: rotateY(94.28571deg) rotateX(188.57143deg);
+    transform: rotateY(94.28571deg) rotateX(188.57143deg);
+    background: rgba(255, 140, 0, 0.25);
+}
+
+.circle:nth-child(24) {
+    -webkit-transform: rotateY(98.57143deg) rotateX(197.14286deg);
+    transform: rotateY(98.57143deg) rotateX(197.14286deg);
+    background: rgba(255, 147, 0, 0.25);
+}
+
+.circle:nth-child(25) {
+    -webkit-transform: rotateY(102.85714deg) rotateX(205.71429deg);
+    transform: rotateY(102.85714deg) rotateX(205.71429deg);
+    background: rgba(255, 153, 0, 0.25);
+}
+
+.circle:nth-child(26) {
+    -webkit-transform: rotateY(107.14286deg) rotateX(214.28571deg);
+    transform: rotateY(107.14286deg) rotateX(214.28571deg);
+    background: rgba(255, 159, 0, 0.25);
+}
+
+.circle:nth-child(27) {
+    -webkit-transform: rotateY(111.42857deg) rotateX(222.85714deg);
+    transform: rotateY(111.42857deg) rotateX(222.85714deg);
+    background: rgba(255, 166, 0, 0.25);
+}
+
+.circle:nth-child(28) {
+    -webkit-transform: rotateY(115.71429deg) rotateX(231.42857deg);
+    transform: rotateY(115.71429deg) rotateX(231.42857deg);
+    background: rgba(255, 172, 0, 0.25);
+}
+
+.circle:nth-child(29) {
+    -webkit-transform: rotateY(120deg) rotateX(240deg);
+    transform: rotateY(120deg) rotateX(240deg);
+    background: rgba(255, 179, 0, 0.25);
+}
+
+.circle:nth-child(30) {
+    -webkit-transform: rotateY(124.28571deg) rotateX(248.57143deg);
+    transform: rotateY(124.28571deg) rotateX(248.57143deg);
+    background: rgba(255, 185, 0, 0.25);
+}
+
+.circle:nth-child(31) {
+    -webkit-transform: rotateY(128.57143deg) rotateX(257.14286deg);
+    transform: rotateY(128.57143deg) rotateX(257.14286deg);
+    background: rgba(255, 191, 0, 0.25);
+}
+
+.circle:nth-child(32) {
+    -webkit-transform: rotateY(132.85714deg) rotateX(265.71429deg);
+    transform: rotateY(132.85714deg) rotateX(265.71429deg);
+    background: rgba(255, 198, 0, 0.25);
+}
+
+.circle:nth-child(33) {
+    -webkit-transform: rotateY(137.14286deg) rotateX(274.28571deg);
+    transform: rotateY(137.14286deg) rotateX(274.28571deg);
+    background: rgba(255, 204, 0, 0.25);
+}
+
+.circle:nth-child(34) {
+    -webkit-transform: rotateY(141.42857deg) rotateX(282.85714deg);
+    transform: rotateY(141.42857deg) rotateX(282.85714deg);
+    background: rgba(255, 210, 0, 0.25);
+}
+
+.circle:nth-child(35) {
+    -webkit-transform: rotateY(145.71429deg) rotateX(291.42857deg);
+    transform: rotateY(145.71429deg) rotateX(291.42857deg);
+    background: rgba(255, 217, 0, 0.25);
+}
+
+.circle:nth-child(36) {
+    -webkit-transform: rotateY(150deg) rotateX(300deg);
+    transform: rotateY(150deg) rotateX(300deg);
+    background: rgba(255, 223, 0, 0.25);
+}
+
+.circle:nth-child(37) {
+    -webkit-transform: rotateY(154.28571deg) rotateX(308.57143deg);
+    transform: rotateY(154.28571deg) rotateX(308.57143deg);
+    background: rgba(255, 229, 0, 0.25);
+}
+
+.circle:nth-child(38) {
+    -webkit-transform: rotateY(158.57143deg) rotateX(317.14286deg);
+    transform: rotateY(158.57143deg) rotateX(317.14286deg);
+    background: rgba(255, 236, 0, 0.25);
+}
+
+.circle:nth-child(39) {
+    -webkit-transform: rotateY(162.85714deg) rotateX(325.71429deg);
+    transform: rotateY(162.85714deg) rotateX(325.71429deg);
+    background: rgba(255, 242, 0, 0.25);
+}
+
+.circle:nth-child(40) {
+    -webkit-transform: rotateY(167.14286deg) rotateX(334.28571deg);
+    transform: rotateY(167.14286deg) rotateX(334.28571deg);
+    background: rgba(255, 249, 0, 0.25);
+}
+
+.circle:nth-child(41) {
+    -webkit-transform: rotateY(171.42857deg) rotateX(342.85714deg);
+    transform: rotateY(171.42857deg) rotateX(342.85714deg);
+    background: rgba(255, 255, 0, 0.25);
+}
+
+.circle:nth-child(42) {
+    -webkit-transform: rotateY(175.71429deg) rotateX(351.42857deg);
+    transform: rotateY(175.71429deg) rotateX(351.42857deg);
+    background: rgba(249, 255, 0, 0.25);
+}
+
+@-webkit-keyframes rotate {
+    to {
+        -webkit-transform: rotateY(360deg) rotateX(360deg);
+        transform: rotateY(360deg) rotateX(360deg);
+    }
+}
+
+@keyframes rotate {
+    to {
+        -webkit-transform: rotateY(360deg) rotateX(360deg);
+        transform: rotateY(360deg) rotateX(360deg);
+    }
+}
+</style>
+<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+</script>
+
+<body>
+    <div class='center'>
+        <div class='sphere'>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+        </div>
+    </div>
+
+<!-- 
+SCSS
+$n: 42;
+
+.center {
+  margin-top: 150px;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+.sphere {
+  margin:auto;
+  position:relative;
+  height:400px;
+  width:400px;
+  transform-style:preserve-3d;
+  animation: rotate 2s infinite linear;  
+}
+.circle {
+  position:absolute;
+  box-sizing:border-box;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  padding: 20px;
+  border-radius: 100%;
+  border: 1px solid #FFF;
+  
+  @for $i from 0 to $n {
+     &:nth-child(#{$i + 1}) {
+       transform: rotateY($i*(180/$n)*1deg) rotateX($i*(360/$n)*1deg);
+       background: hsla($i*1.5,100%,50%,.25);
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+ -->
+<!-- 
+haml
+.center
+  .sphere
+    - 42.times do
+      .circle -->
+</body>
+
+</html>

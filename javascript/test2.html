@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<script>
+	
+	alert("a");
+	
+	window.onload=function(){
+		alert("b");
+		window.onload=function(){
+			alert("h");
+		}
+		alert("i");
+	}
+
+	alert("c");
+	</script>
+</head>
+
+<body onload="alert('d');">		
+	<script>
+	
+	alert("e");
+	window.onload=function(){
+			alert("f");
+	}
+
+	alert("g");
+	</script>
+</body>
+
+</html>

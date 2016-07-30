@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css</title>
+	<style type="text/css" media="screen">
+	body{
+		background-color:#222;
+		margin:100px auto;
+		text-align:center;
+	}
+
+	.digit, .colon{
+		position:relative;
+		display:inline-block;
+		width:10px;
+		height:110px;
+		margin:5px;
+	}
+
+
+	.colon{
+		background: linear-gradient(-90deg, #333 10px, transparent 10px),
+		linear-gradient(-90deg, #333 10px, transparent 10px);
+		
+		
+		background-position: 0 40px, 0 65px;
+		background-repeat:no-repeat;
+		background-size:10px 10px, 10px 10px;
+		
+	}
+
+	.digit{
+		width:60px;
+		
+		background-image: linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #333 50px),   /* Topleft */
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #333 50px);   /* Bottomleft */
+		
+		background-position: 0 0, 0 50px, 0 100px, 0 10px, 0 60px;
+		background-repeat:no-repeat;
+		background-size:60px 10px, 60px 10px, 60px 10px, 60px 40px, 60px 40px;
+	}
+
+	.zero{
+		background-image: linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #82FA58 10px, transparent 10px, transparent 50px, #82FA58 50px),   /* Topleft */
+		linear-gradient(90deg, #82FA58 10px, transparent 10px, transparent 50px, #82FA58 50px);   /* Bottomleft */
+	}
+
+	.one{
+		background-image: linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #82FA58 50px),   /* Topleft */
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #82FA58 50px);   /* Bottomleft */
+	}
+
+	.two{
+		background-image: linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #82FA58 50px),   /* Topleft */
+		linear-gradient(90deg, #82FA58 10px, transparent 10px, transparent 50px, #333 50px);   /* Bottomleft */
+	}
+
+	.three{
+		background-image: linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #82FA58 50px),   /* Topleft */
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #82FA58 50px);   /* Bottomleft */
+	}
+
+	.foure{
+		background-image: linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #82FA58 10px, transparent 10px, transparent 50px, #82FA58 50px),   /* Topleft */
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #82FA58 50px);   /* Bottomleft */
+	}
+
+	.five{
+		background-image: linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #82FA58 10px, transparent 10px, transparent 50px, #333 50px),   /* Topleft */
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #82FA58 50px);   /* Bottomleft */
+	}
+
+
+	.six{
+		background-image: linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #82FA58 10px, transparent 10px, transparent 50px, #333 50px),   /* Topleft */
+		linear-gradient(90deg, #82FA58 10px, transparent 10px, transparent 50px, #82FA58 50px);   /* Bottomleft */
+	}
+
+
+	.seven{
+		background-image: linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #333 10px, #333 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #82FA58 50px),   /* Topleft */
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #82FA58 50px);   /* Bottomleft */
+	}
+
+
+	.eight{
+		background-image: linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #82FA58 10px, transparent 10px, transparent 50px, #82FA58 50px),   /* Topleft */
+		linear-gradient(90deg, #82FA58 10px, transparent 10px, transparent 50px, #82FA58 50px);   /* Bottomleft */
+	}
+
+	.nine{
+		background-image: linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /*  Top  */
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Middle*/
+		linear-gradient(90deg, transparent 10px, #82FA58 10px, #82FA58 50px, transparent 50px),   /* Bottom*/
+		
+		linear-gradient(90deg, #82FA58 10px, transparent 10px, transparent 50px, #82FA58 50px),   /* Topleft */
+		linear-gradient(90deg, #333 10px, transparent 10px, transparent 50px, #82FA58 50px);   /* Bottomleft */
+	}
+
+	</style>
+	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+	var clock = {
+		
+		digits : ["zero", "one", "two", "three", "foure", "five", "six", "seven", "eight", "nine"],
+		
+		init : function(){
+			var $digit = $('.digit');
+			
+    // Ugly....
+    this.hour = [$($digit[0]), $($digit[1])];    
+    this.min  = [$($digit[2]), $($digit[3])];    
+    this.sec  = [$($digit[4]), $($digit[5])];
+    
+    
+    this.drawInterval(this.drawSecond, function(time){
+    	return 1000 - time[3];
+    })
+    
+    this.drawInterval(this.drawMinute, function(time){
+    	return 60000 - time[2] * 1000 - time[3];
+    })
+    
+    
+    this.drawInterval(this.drawHour, function(time){
+    	return (60 - time[1]) * 60000 - time[2] * 1000 - time[3];
+    })        
+    
+},
+
+getTimeArray : function(){
+	var dat = new Date();
+	return [dat.getHours(), dat.getMinutes(), dat.getSeconds(), dat.getMilliseconds()];
+},
+
+drawInterval : function(func, timeCallback){
+	var time = this.getTimeArray();
+	
+	func.call(this, time);    
+	
+	var that = this;
+	setTimeout(function(){
+		that.drawInterval(func, timeCallback);      
+	}, timeCallback(time));
+},
+
+drawHour : function(time){
+	this.drawDigits(this.hour, time[0]);  
+},
+
+drawMinute : function(time){
+	this.drawDigits(this.min,  time[1]);  
+},
+
+drawSecond : function(time){  
+	this.drawDigits(this.sec,  time[2]);
+},
+
+drawDigits : function(digits, digit){
+	var ten = Math.floor(digit / 10);
+	var one = Math.floor(digit % 10);
+	
+	digits[0].attr('class', 'digit '+this.digits[ten]);
+	digits[1].attr('class', 'digit '+this.digits[one]);
+}
+
+}; 
+
+clock.init();
+</script>
+</head>
+<body>		
+	<span class="digit"></span>
+	<span class="digit"></span>
+	
+	<span class="colon"></span>
+	
+	<span class="digit"></span>
+	<span class="digit"></span>
+	
+	<span class="colon"></span>
+
+	<span class="digit"></span>
+	<span class="digit"></span>
+
+
+</body>
+</html>
