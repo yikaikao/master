@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css8</title>
+</head>
+	<style type="text/css" media="screen">
+		body {
+		  margin: 0;
+		  overflow: hidden;
+		  background: black;
+		}
+	</style>
+	
+	<body>		
+		<canvas id="canvas"></canvas>
+
+<script type="text/javascript" language="javascript">
+    var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+window.addEventListener('resize',function(){
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+});
+
+var gravity = 0.45;
+var friction = 0.99;
+var particlesPerBlast = 60;
+var newBlast = 0;
+
+function Particle(x,y,h) {
+  this.lifetime = 40 + Math.round(Math.random() * 40);
+  this.gravityTime = 15;
+  this.hue = h;
+  this.alpha = 1;
+  this.size = 1 + Math.round(Math.random());
+  this.x = x;
+  this.y = y;
+  this.z = innerHeight - Math.round(Math.random() * 80);
+  this.xSpeed = 5 + Math.random() * -10;
+  this.ySpeed = 5 + Math.random() * -10;
+}
+
+Particle.prototype.tick = function(i) {
+  if (this.lifetime > 0) {
+    this.move();
+    this.render();
+  } else {
+    particles.splice(i,1);
+  }
+  this.lifetime--;
+};
+
+Particle.prototype.move = function()  {
+  if (this.y + this.ySpeed >= this.z) {
+    this.ySpeed *= -0.5;
+  }
+  this.x += this.xSpeed;
+  this.y += this.ySpeed;
+  this.xSpeed *= friction;
+  this.gravityTime--;
+  if (this.gravityTime < 0) {
+    this.ySpeed += gravity;
+  }
+};
+
+Particle.prototype.render = function() {
+  ctx.shadowColor = 'hsl(' + this.hue + ',100%,95%)';
+  ctx.shadowBlur = this.size * 3;
+  ctx.fillStyle = 'hsl(' + this.hue + ',100%,85%)';
+  ctx.fillRect(this.x, this.y, this.size, this.size);
+  
+  if (this.z - this.y <= innerHeight - this.z) {
+    
+    var floorPos = Math.max(this.z, this.y);
+    var glowAlpha = 0.25 * (1 - ((this.z - this.y) / (innerHeight - this.z)));
+    
+    //  \/ Adds a glow to particles as they reach the floor \/
+    /*
+    var glowY = ctx.createLinearGradient(this.x, floorPos - 2, this.x, floorPos + 2);
+    var glowX = ctx.createLinearGradient(this.x - 5, floorPos, this.x + 5, floorPos);
+    glowY.addColorStop(0, 'hsla(' + this.hue + ',100%,35%,0)');
+    glowY.addColorStop(0.5, 'hsla(' + this.hue + ',100%,35%,' + glowAlpha + ')');
+    glowY.addColorStop(1, 'hsla(' + this.hue + ',100%,35%,0)');
+    glowX.addColorStop(0, 'hsla(' + this.hue + ',100%,35%,0)');
+    glowX.addColorStop(0.5, 'hsla(' + this.hue + ',100%,35%,' + glowAlpha + ')');
+    glowX.addColorStop(1, 'hsla(' + this.hue + ',100%,35%,0)');
+    ctx.fillStyle = glowX;
+    ctx.fillRect(this.x - 6, floorPos - 3, 12, 6);
+    ctx.fillStyle = glowY;
+    ctx.fillRect(this.x - 6, floorPos - 3, 12, 6);
+    */
+    
+    ctx.fillStyle = 'hsla(' + this.hue + ',60%,75%,' + (glowAlpha * 2) + ')';
+    ctx.fillRect(this.x, this.size + floorPos + (floorPos - this.y), this.size, this.size);
+  }
+};
+
+function populate(arr, ex, ey, hue) {
+  for (var i = 0; i < particlesPerBlast; i++) {
+    arr.push(new Particle(ex, ey, hue));
+  }
+}
+
+function autoPopulate() {
+  populate(particles, 100 + Math.round(Math.random() * (innerWidth - 200)), innerHeight - 50 - Math.round(Math.random() * 50), Math.round(Math.random() * 360));
+  newBlast = 60;
+}
+
+var particles = [];
+
+document.addEventListener('click',function(e){
+  e.preventDefault();
+  populate(particles, e.clientX, e.clientY, Math.round(Math.random() * 360));
+  newBlast = 120;
+})
+
+function animate() {
+  if (newBlast > 0) {
+    newBlast--;
+  }
+  if (newBlast <= 0) {
+    autoPopulate();
+  }
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
+  var floor = ctx.createLinearGradient(330, innerHeight - 100, 340, innerHeight);
+  floor.addColorStop(0, 'hsl(0,0%,3%)');
+  floor.addColorStop(0.3, 'hsl(0,0%,7%)');
+  floor.addColorStop(0.5, 'hsl(0,0%,1%)');
+  floor.addColorStop(0.7, 'hsl(0,0%,6%)');
+  floor.addColorStop(0.75, 'hsl(0,0%,1%)');
+  floor.addColorStop(0.85, 'hsl(0,0%,4%)');
+  floor.addColorStop(1, 'hsl(0,0%,0%)');
+  ctx.fillStyle = floor;
+  ctx.fillRect(0, innerHeight - 100, innerWidth, innerHeight);
+  
+  for (var i = 0; i < particles.length; i++) {
+    particles[i].tick(i);
+  }
+  window.requestAnimationFrame(animate);
+}
+
+animate();
+
+
+
+
+
+  </script>
+	</body>
+</html>

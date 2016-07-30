@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css8</title>
+</head>
+<style type="text/css" media="screen">
+canvas {
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: black;
+}
+</style>
+<body>		
+	<canvas id="c"> </canvas>
+	<script type="text/javascript" language="javascript">
+	var w = c.width = window.innerWidth,
+	h = c.height = window.innerHeight,
+	ctx = c.getContext( '2d' ),
+	
+	opts = {
+		
+		fn: function( x ) { return x/1.5 - 2 },
+		trainings: 1000000,
+		learningConstant: .0000001,
+		precision: 4,
+		trainingsParLoop: 100,
+	},
+	
+    random = function( precision ) { return Math.random(); }, //.toFixed( precision ) },
+    perceptron = new Perceptron( 2 );
+
+    function Perceptron( n ) {
+
+    	this.weights = [];
+    	for( var i = 0; i < n; ++i )
+    		this.weights[ i ] = -1 + random( opts.precision ) * 2;
+    	
+    	this.bias = -1 + random( opts.precision ) * 2;
+    	
+    }
+    Perceptron.prototype.feedforward = function( inputs ) {
+
+    	var output = this.bias;
+    	
+    	for( var i = 0; i < inputs.length; ++i )
+    		output += inputs[ i ] * this.weights[ i ];
+    	
+    	return output > 0 ? 1 : -1;
+    }
+    Perceptron.prototype.train = function( expected, inputs ) {
+
+    	var output = this.feedforward( inputs ),
+    	error = expected - output;
+    	
+    	for( var i = 0; i < inputs.length; ++i )
+    		this.weights[ i ] += error * inputs[ i ] * opts.learningConstant;
+    	
+    	this.bias += error * opts.learningConstant;
+    	
+    	return output;
+    }
+
+    var train = 0;
+    function loop() {
+
+    	if( ( train += opts.trainingsParLoop ) < opts.trainings ) window.requestAnimationFrame( loop );
+    	else doFinalEvaluation();
+    	
+    	ctx.fillStyle = 'rgba(0,0,0,.04)';
+    	ctx.fillRect( 0, 0, w, h );
+
+    	for( var j = 0; j < opts.trainingsParLoop; ++j ) {
+    		
+    		var x = random( opts.precision ) * w,
+    		y = random( opts.precision ) * h,
+    		expected = y > opts.fn( x ) ? 1 : -1,
+    		output = perceptron.train( expected, [ x, y ] ),
+    		result = output === expected;
+
+    		ctx.fillStyle = result ? 'green' : 'red';
+    		
+    		if( output > 0 ) {
+    			
+    			ctx.fillRect( x - 2, y - 2, 4, 4 );
+    		} else {
+    			
+    			ctx.beginPath();
+    			ctx.arc( x, y, 2, 0, Math.PI * 2 );
+    			ctx.fill();
+    		}
+    	}
+    }
+    loop();
+
+    function doFinalEvaluation() {
+    	
+    	ctx.fillStyle = 'black';
+    	ctx.fillRect( 0, 0, w, h );
+    	
+    	loop2();
+    }
+
+    var ex = ey = 0,
+    gotRight = 0,
+    gotWrong = 0;
+
+    function loop2() {
+
+    	if( ex < w ) window.requestAnimationFrame( loop2 );
+    	
+    	for( var test = 0; test < 200; ++test ) {
+    		
+    		++ey;
+    		if( ey > h ) {
+
+    			ey = 0;
+    			++ex;
+    		}
+
+    		var expected = ey > opts.fn( ex ) ? 1 : -1,
+    		output = perceptron.feedforward( [ ex, ey ] ),
+    		result = output === expected;
+    		
+    		result ? ++gotRight : ++gotWrong;
+
+    		ctx.fillStyle = 'hsl(hue, 80%, light%)'.replace( 'hue', result ? '100' : '0' ).replace( 'light', output > 0 ? '80' : '20' );
+    		ctx.fillRect( ex, ey, 1, 1 );
+    	}
+    }
+    </script>
+
+
+</body>
+</html>

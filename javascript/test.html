@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<script>
+	function head(){
+		alert("head");
+	}
+	window.onload=head();
+	window.onload=function(){
+		alert("func");
+	}
+
+	function load(){
+		alert("head load");
+	}
+	</script>
+</head>
+<style>
+</style>
+
+<body onload="load();">		
+	<div id="ssss"></div>
+	<canvas id="testkai"></canvas>
+	<canvas name="kai"></canvas>
+	<script>
+	function body(){
+		alert("body");
+	}
+	function load2(){
+		alert("body load");
+	}
+	window.onload=body();
+	</script>
+
+
+</body>
+
+</html>
